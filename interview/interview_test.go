@@ -11,7 +11,7 @@ func Test1(t *testing.T) {
 	defer func() { fmt.Println("打印前") }()
 	defer func() { fmt.Println("打印中") }()
 	defer func() { fmt.Println("打印后") }()
-	panic("触发异常")
+	//panic("触发异常")
 }
 
 func Test2(t *testing.T) {
@@ -360,7 +360,7 @@ func Test45(t *testing.T) {
 		}()
 	}
 
-	time.Sleep(time.Second * 1)
+	time.Sleep(time.Millisecond * 10)
 }
 
 func f46(n int) (r int) {
@@ -461,7 +461,7 @@ func Test59(t *testing.T) {
 	case value := <-intChan:
 		fmt.Println(value)
 	case value := <-stringChan:
-		panic(value)
+		fmt.Printf("panic: %s", value)
 	}
 }
 
